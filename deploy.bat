@@ -1,16 +1,54 @@
 @echo off
 REM GCP Cloud Run Deployment Script for Windows
-
-REM Configuration - UPDATE THESE VALUES
-set PROJECT_ID=ai-accelerate-devpost
-set GEMINI_API_KEY=AIzaSyBCSkT3M4TNZxwiwzC8ieSgTQ3u4Hbm5q0
-set SERVICE_NAME=travel-assistant-v2
-set REGION=us-central1
-set IMAGE_NAME=gcr.io/%PROJECT_ID%/%SERVICE_NAME%
+REM Reads configuration from .env file
 
 echo =========================================
 echo Deploying to Google Cloud Run
 echo =========================================
+echo.
+
+REM Check if .env file exists
+if not exist .env (
+    echo ERROR: .env file not found!
+    echo Please create .env file from .env.example
+    echo   copy .env.example .env
+    echo Then edit .env with your credentials.
+    pause
+    exit /b 1
+)
+
+REM Load environment variables from .env file
+echo Loading configuration from .env...
+for /f "usebackq tokens=1,* delims==" %%a in (.env) do (
+    set "line=%%a"
+    REM Skip comments and empty lines
+    if not "!line:~0,1!"=="#" if not "%%a"=="" (
+        set "%%a=%%b"
+    )
+)
+
+REM Set deployment configuration
+set SERVICE_NAME=travel-assistant-v2
+set REGION=us-central1
+set IMAGE_NAME=gcr.io/%GOOGLE_CLOUD_PROJECT%/%SERVICE_NAME%
+
+REM Validate required variables
+if "%GOOGLE_CLOUD_PROJECT%"=="" (
+    echo ERROR: GOOGLE_CLOUD_PROJECT not set in .env
+    pause
+    exit /b 1
+)
+if "%GOOGLE_API_KEY%"=="" (
+    echo ERROR: GOOGLE_API_KEY not set in .env
+    pause
+    exit /b 1
+)
+
+echo.
+echo Configuration:
+echo   Project: %GOOGLE_CLOUD_PROJECT%
+echo   Service: %SERVICE_NAME%
+echo   Region: %REGION%
 echo.
 
 REM Check if gcloud is installed
@@ -23,8 +61,8 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 REM Set project
-echo Setting project to: %PROJECT_ID%
-gcloud config set project %PROJECT_ID%
+echo Setting project to: %GOOGLE_CLOUD_PROJECT%
+gcloud config set project %GOOGLE_CLOUD_PROJECT%
 
 REM Build container
 echo.
@@ -37,6 +75,20 @@ if %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
+REM Prepare environment variables for Cloud Run
+set ENV_VARS=GOOGLE_CLOUD_PROJECT=%GOOGLE_CLOUD_PROJECT%
+set ENV_VARS=%ENV_VARS%,GOOGLE_API_KEY=%GOOGLE_API_KEY%
+set ENV_VARS=%ENV_VARS%,GEMINI_MODEL=%GEMINI_MODEL%
+set ENV_VARS=%ENV_VARS%,EMBEDDING_MODEL=%EMBEDDING_MODEL%
+
+REM Add optional Elasticsearch variables if set
+if not "%ELASTICSEARCH_URL%"=="" (
+    set ENV_VARS=%ENV_VARS%,ELASTICSEARCH_URL=%ELASTICSEARCH_URL%
+)
+if not "%ELASTICSEARCH_API_KEY%"=="" (
+    set ENV_VARS=%ENV_VARS%,ELASTICSEARCH_API_KEY=%ELASTICSEARCH_API_KEY%
+)
+
 REM Deploy to Cloud Run
 echo.
 echo Deploying to Cloud Run...
@@ -45,12 +97,7 @@ gcloud run deploy %SERVICE_NAME% ^
     --platform managed ^
     --region %REGION% ^
     --allow-unauthenticated ^
-    --set-env-vars "GOOGLE_CLOUD_PROJECT=%PROJECT_ID%" ^
-    --set-env-vars "GOOGLE_API_KEY=%GEMINI_API_KEY%" ^
-    --set-env-vars "ELASTICSEARCH_URL=https://my-elasticsearch-project-f06d88.es.us-central1.gcp.elastic.cloud:443" ^
-    --set-env-vars "ELASTICSEARCH_API_KEY=ZUNOc3U1a0JRMmJEeDN5RFhMSFE6VlNHdHlwQU9OZldvMDktRGRvdU5LQQ==" ^
-    --set-env-vars "GEMINI_MODEL=gemini-2.5-flash" ^
-    --set-env-vars "EMBEDDING_MODEL=text-embedding-004" ^
+    --set-env-vars "%ENV_VARS%" ^
     --memory 2Gi ^
     --cpu 2 ^
     --timeout 300 ^
@@ -63,8 +110,10 @@ if %ERRORLEVEL% EQU 0 (
     echo =========================================
     echo.
     echo Your application is now running on Cloud Run.
+    echo.
     echo Get the URL with:
     echo   gcloud run services describe %SERVICE_NAME% --region %REGION% --format "value(status.url)"
+    echo.
 ) else (
     echo ERROR: Deployment failed
     pause

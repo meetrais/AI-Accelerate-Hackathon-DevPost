@@ -276,16 +276,28 @@ Assistant: [Remembers preference]
 # Authenticate
 gcloud auth login
 
-# Set project
-gcloud config set project your-project-id
-
-# Enable APIs
+# Enable APIs (one-time setup)
 gcloud services enable run.googleapis.com
 gcloud services enable cloudbuild.googleapis.com
 gcloud services enable aiplatform.googleapis.com
 ```
 
-2. **Deploy**
+2. **Configure Environment**
+```bash
+# Copy .env.example to .env
+cp .env.example .env  # Linux/Mac
+copy .env.example .env  # Windows
+
+# Edit .env with your credentials
+# Required:
+#   GOOGLE_CLOUD_PROJECT=your-project-id
+#   GOOGLE_API_KEY=your-gemini-api-key
+# Optional:
+#   ELASTICSEARCH_URL=your-elasticsearch-url
+#   ELASTICSEARCH_API_KEY=your-es-api-key
+```
+
+3. **Deploy**
 ```bash
 # Windows
 .\deploy.bat
@@ -295,7 +307,14 @@ chmod +x deploy.sh
 ./deploy.sh
 ```
 
-3. **Get Service URL**
+The deployment script will:
+- Read configuration from `.env` file
+- Build Docker image using Cloud Build
+- Deploy to Cloud Run with auto-scaling
+- Configure environment variables
+- Display the service URL
+
+4. **Get Service URL**
 ```bash
 gcloud run services describe travel-assistant-v2 \
   --region us-central1 \
@@ -304,10 +323,12 @@ gcloud run services describe travel-assistant-v2 \
 
 ### Configuration
 
-The deployment script automatically configures:
+The deployment automatically configures:
 - Memory: 2GB
 - CPU: 2 cores
 - Timeout: 300 seconds
+- Max Instances: 10
+- Region: us-central1
 - Auto-scaling: 0-10 instances
 - Environment variables from `.env`
 
