@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dest_001",
+    "type": "destination",
+    "name": "Kyoto, Japan",
+    "description": "Ancient capital of Japan featuring stunning temples, traditional gardens, geisha culture, and seasonal beauty. Experience cherry blossoms in spring, vibrant autumn colors, and peaceful zen gardens year-round.",
+    "location": {"country": "Japan", "city": "Kyoto", "region": "Kansai"},
+    "price_range": "$$",
+    "rating": 4.8,
+    "categories": ["cultural", "historical", "nature", "photography"],
+    "best_season": ["spring", "fall"],
+    "highlights": ["Fushimi Inari Shrine", "Arashiyama Bamboo Grove", "Kinkaku-ji Temple"]
+  },
+  {
+    "id": "dest_002",
+    "type": "destination",
+    "name": "Santorini, Greece",
+    "description": "Iconic Greek island with whitewashed buildings, blue-domed churches, and breathtaking sunsets over the Aegean Sea. Perfect for romantic getaways, wine tasting, and beach relaxation.",
+    "location": {"country": "Greece", "city": "Santorini", "region": "Cyclades"},
+    "price_range": "$$$",
+    "rating": 4.9,
+    "categories": ["romantic", "beach", "luxury", "photography"],
+    "best_season": ["spring", "summer", "fall"],
+    "highlights": ["Oia sunset", "Red Beach", "Wine tours"]
+  },
+  {
+    "id": "dest_003",
+    "type": "destination",
+    "name": "Reykjavik, Iceland",
+    "description": "Gateway to Iceland's natural wonders including geysers, waterfalls, glaciers, and the Northern Lights. Modern city with vibrant culture, unique cuisine, and geothermal hot springs.",
+    "location": {"country": "Iceland", "city": "Reykjavik", "region": "Capital Region"},
+    "price_range": "$$$",
+    "rating": 4.7,
+    "categories": ["adventure", "nature", "photography", "unique"],
+    "best_season": ["summer", "winter"],
+    "highlights": ["Blue Lagoon", "Golden Circle", "Northern Lights"]
+  },
+  {
+    "id": "dest_004",
+    "type": "destination",
+    "name": "Marrakech, Morocco",
+    "description": "Vibrant city of souks, palaces, and gardens. Experience exotic spices, traditional hammams, stunning architecture, and the energy of Jemaa el-Fnaa square.",
+    "location": {"country": "Morocco", "city": "Marrakech", "region": "Marrakech-Safi"},
+    "price_range": "$",
+    "rating": 4.6,
+    "categories": ["cultural", "adventure", "food", "shopping"],
+    "best_season": ["spring", "fall", "winter"],
+    "highlights": ["Jemaa el-Fnaa", "Majorelle Garden", "Medina souks"]
+  },
+  {
+    "id": "dest_005",
+    "type": "destination",
+    "name": "Banff, Canada",
+    "description": "Mountain paradise in the Canadian Rockies with turquoise lakes, hiking trails, wildlife, and world-class skiing. Perfect for outdoor enthusiasts and nature lovers.",
+    "location": {"country": "Canada", "city": "Banff", "region": "Alberta"},
+    "price_range": "$$",
+    "rating": 4.8,
+    "categories": ["nature", "adventure", "hiking", "skiing"],
+    "best_season": ["summer", "winter"],
+    "highlights": ["Lake Louise", "Moraine Lake", "Banff Gondola"]
+  }
+]

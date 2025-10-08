@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Assistant v2.0 - Your Personal Travel Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_v2.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✈️ AI Travel Assistant</h1>
+            <p>Your Personal Travel Companion - Powered by Google Gemini</p>
+        </header>
+
+        <!-- Main Chat Interface -->
+        <div class="chat-container">
+            <div id="messages" class="messages"></div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Where would you like to go? 🌍" autocomplete="off"/>
+                <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <div id="selectedFlight" class="selected-item"></div>
+            
+            <form id="paymentForm" class="payment-form">
+                <h3>Passenger Details</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="passengerName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="passengerEmail" placeholder="john@example.com" required>
+                </div>
+                
+                <h3>Payment Information</h3>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="4242 4242 4242 4242" maxlength="19" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" id="cardCvv" placeholder="123" maxlength="4" required>
+                    </div>
+                </div>
+                
+                <div class="total-amount">
+                    <span>Total Amount:</span>
+                    <span id="totalAmount">$0</span>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-large">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <h2>✅ Booking Confirmed!</h2>
+            <div id="confirmationDetails"></div>
+            <button class="btn-primary" onclick="closeSuccessModal()">View My Bookings</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app_v2.js') }}"></script>
+</body>
+</html>

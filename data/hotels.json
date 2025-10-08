@@ -1,0 +1,57 @@
+[
+  {
+    "id": "hotel_001",
+    "type": "hotel",
+    "name": "The Ritz-Carlton Kyoto",
+    "description": "Luxury hotel along the Kamogawa River blending modern comfort with traditional Japanese aesthetics. Features onsen baths, kaiseki dining, and impeccable service.",
+    "location": {"country": "Japan", "city": "Kyoto"},
+    "price_range": "$$$",
+    "rating": 4.9,
+    "categories": ["luxury", "spa", "traditional", "riverside"],
+    "amenities": ["spa", "restaurant", "bar", "gym", "onsen"]
+  },
+  {
+    "id": "hotel_002",
+    "type": "hotel",
+    "name": "Canaves Oia Suites",
+    "description": "Stunning cave suites carved into the cliffs of Oia with private plunge pools and caldera views. Ultimate romantic luxury experience in Santorini.",
+    "location": {"country": "Greece", "city": "Santorini"},
+    "price_range": "$$$",
+    "rating": 4.9,
+    "categories": ["luxury", "romantic", "pool", "view"],
+    "amenities": ["pool", "restaurant", "spa", "concierge", "breakfast"]
+  },
+  {
+    "id": "hotel_003",
+    "type": "hotel",
+    "name": "Ion Adventure Hotel",
+    "description": "Modern design hotel in the Icelandic countryside with Northern Lights viewing, geothermal spa, and adventure activities. Eco-friendly and stylish.",
+    "location": {"country": "Iceland", "city": "Reykjavik"},
+    "price_range": "$$",
+    "rating": 4.7,
+    "categories": ["design", "nature", "spa", "adventure"],
+    "amenities": ["spa", "restaurant", "bar", "northern lights viewing", "activities"]
+  },
+  {
+    "id": "hotel_004",
+    "type": "hotel",
+    "name": "Riad Yasmine",
+    "description": "Traditional Moroccan riad in the heart of the medina with rooftop terrace, courtyard pool, and authentic decor. Peaceful oasis near all attractions.",
+    "location": {"country": "Morocco", "city": "Marrakech"},
+    "price_range": "$",
+    "rating": 4.6,
+    "categories": ["traditional", "boutique", "pool", "central"],
+    "amenities": ["pool", "rooftop terrace", "breakfast", "hammam", "wifi"]
+  },
+  {
+    "id": "hotel_005",
+    "type": "hotel",
+    "name": "Fairmont Chateau Lake Louise",
+    "description": "Iconic castle-like hotel directly on Lake Louise with mountain views, fine dining, and year-round activities. Perfect base for exploring the Rockies.",
+    "location": {"country": "Canada", "city": "Banff"},
+    "price_range": "$$$",
+    "rating": 4.8,
+    "categories": ["luxury", "historic", "lakefront", "resort"],
+    "amenities": ["spa", "restaurants", "gym", "ski access", "concierge"]
+  }
+]

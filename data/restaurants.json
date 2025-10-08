@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rest_001",
+    "type": "restaurant",
+    "name": "Kikunoi Honten",
+    "description": "Three Michelin-star kaiseki restaurant offering exquisite seasonal Japanese cuisine in a traditional setting. Reservations required well in advance.",
+    "location": {"country": "Japan", "city": "Kyoto"},
+    "price_range": "$$$",
+    "rating": 4.9,
+    "categories": ["fine dining", "kaiseki", "traditional", "michelin"],
+    "cuisine": "Japanese",
+    "specialties": ["seasonal kaiseki", "tea ceremony"]
+  },
+  {
+    "id": "rest_002",
+    "type": "restaurant",
+    "name": "Selene",
+    "description": "Upscale restaurant in Fira showcasing modern Greek cuisine with local ingredients and caldera views. Romantic atmosphere and excellent wine list.",
+    "location": {"country": "Greece", "city": "Santorini"},
+    "price_range": "$$$",
+    "rating": 4.8,
+    "categories": ["fine dining", "romantic", "view", "modern"],
+    "cuisine": "Greek",
+    "specialties": ["seafood", "local wines", "sunset dining"]
+  },
+  {
+    "id": "rest_003",
+    "type": "restaurant",
+    "name": "Dill Restaurant",
+    "description": "Michelin-starred New Nordic cuisine using Icelandic ingredients. Innovative tasting menus highlighting local flavors and traditions.",
+    "location": {"country": "Iceland", "city": "Reykjavik"},
+    "price_range": "$$$",
+    "rating": 4.7,
+    "categories": ["fine dining", "michelin", "modern", "local"],
+    "cuisine": "Nordic",
+    "specialties": ["tasting menu", "local ingredients", "innovative"]
+  },
+  {
+    "id": "rest_004",
+    "type": "restaurant",
+    "name": "Nomad",
+    "description": "Trendy restaurant in the medina serving modern Moroccan cuisine with international influences. Beautiful rooftop terrace and creative cocktails.",
+    "location": {"country": "Morocco", "city": "Marrakech"},
+    "price_range": "$$",
+    "rating": 4.6,
+    "categories": ["modern", "rooftop", "fusion", "trendy"],
+    "cuisine": "Moroccan",
+    "specialties": ["tagines", "couscous", "cocktails"]
+  },
+  {
+    "id": "rest_005",
+    "type": "restaurant",
+    "name": "The Bison Restaurant",
+    "description": "Mountain lodge dining featuring Canadian game meats, local ingredients, and craft beers. Cozy atmosphere with stone fireplace and rustic decor.",
+    "location": {"country": "Canada", "city": "Banff"},
+    "price_range": "$$",
+    "rating": 4.7,
+    "categories": ["local", "rustic", "game meat", "cozy"],
+    "cuisine": "Canadian",
+    "specialties": ["bison", "elk", "local fish", "craft beer"]
+  },
+  {
+    "id": "rest_006",
+    "type": "restaurant",
+    "name": "Nishiki Warai",
+    "description": "Casual okonomiyaki restaurant near Nishiki Market. Watch chefs prepare savory pancakes on your table grill. Great value and fun experience.",
+    "location": {"country": "Japan", "city": "Kyoto"},
+    "price_range": "$",
+    "rating": 4.5,
+    "categories": ["casual", "local", "interactive", "value"],
+    "cuisine": "Japanese",
+    "specialties": ["okonomiyaki", "yakisoba"]
+  },
+  {
+    "id": "rest_007",
+    "type": "restaurant",
+    "name": "Lucky's Souvlakis",
+    "description": "Popular local spot for authentic Greek souvlaki, gyros, and mezze. Casual atmosphere with generous portions and friendly service.",
+    "location": {"country": "Greece", "city": "Santorini"},
+    "price_range": "$",
+    "rating": 4.6,
+    "categories": ["casual", "local", "street food", "value"],
+    "cuisine": "Greek",
+    "specialties": ["souvlaki", "gyros", "tzatziki"]
+  },
+  {
+    "id": "rest_008",
+    "type": "restaurant",
+    "name": "Bæjarins Beztu Pylsur",
+    "description": "Famous hot dog stand serving Icelandic hot dogs since 1937. A must-try local institution with unique toppings. Quick and cheap.",
+    "location": {"country": "Iceland", "city": "Reykjavik"},
+    "price_range": "$",
+    "rating": 4.4,
+    "categories": ["street food", "local", "quick", "iconic"],
+    "cuisine": "Icelandic",
+    "specialties": ["hot dogs", "local favorite"]
+  },
+  {
+    "id": "rest_009",
+    "type": "restaurant",
+    "name": "Café des Épices",
+    "description": "Charming café in the spice market serving Moroccan and Mediterranean dishes. Rooftop seating with medina views and relaxed vibe.",
+    "location": {"country": "Morocco", "city": "Marrakech"},
+    "price_range": "$",
+    "rating": 4.5,
+    "categories": ["café", "rooftop", "casual", "view"],
+    "cuisine": "Moroccan",
+    "specialties": ["tagines", "salads", "mint tea"]
+  },
+  {
+    "id": "rest_010",
+    "type": "restaurant",
+    "name": "Park Distillery",
+    "description": "Craft distillery and restaurant on Banff Avenue. House-made spirits, creative cocktails, and elevated pub food in a lively atmosphere.",
+    "location": {"country": "Canada", "city": "Banff"},
+    "price_range": "$$",
+    "rating": 4.6,
+    "categories": ["pub", "distillery", "cocktails", "lively"],
+    "cuisine": "Canadian",
+    "specialties": ["craft spirits", "burgers", "cocktails"]
+  }
+]

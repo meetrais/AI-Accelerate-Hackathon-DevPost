@@ -1,0 +1,122 @@
+[
+  {
+    "id": "act_001",
+    "type": "activity",
+    "name": "Fushimi Inari Shrine Hike",
+    "description": "Walk through thousands of vermillion torii gates up Mount Inari. This iconic shrine offers stunning photo opportunities and peaceful forest trails. Takes 2-3 hours for full hike.",
+    "location": {"country": "Japan", "city": "Kyoto"},
+    "price_range": "$",
+    "rating": 4.9,
+    "categories": ["cultural", "hiking", "photography", "free"],
+    "duration_hours": 2.5,
+    "best_time": "early morning"
+  },
+  {
+    "id": "act_002",
+    "type": "activity",
+    "name": "Santorini Sunset Cruise",
+    "description": "Sail around the caldera at sunset with swimming stops at hot springs and Red Beach. Includes dinner and drinks. Unforgettable views of the island from the water.",
+    "location": {"country": "Greece", "city": "Santorini"},
+    "price_range": "$$$",
+    "rating": 4.8,
+    "categories": ["romantic", "cruise", "sunset", "luxury"],
+    "duration_hours": 5,
+    "best_time": "evening"
+  },
+  {
+    "id": "act_003",
+    "type": "activity",
+    "name": "Golden Circle Tour",
+    "description": "Visit Iceland's most famous natural wonders: Thingvellir National Park, Geysir geothermal area, and Gullfoss waterfall. Full day tour with guide.",
+    "location": {"country": "Iceland", "city": "Reykjavik"},
+    "price_range": "$$",
+    "rating": 4.7,
+    "categories": ["nature", "tour", "photography", "adventure"],
+    "duration_hours": 8,
+    "best_time": "morning"
+  },
+  {
+    "id": "act_004",
+    "type": "activity",
+    "name": "Traditional Hammam Experience",
+    "description": "Authentic Moroccan spa experience with steam bath, exfoliation, and massage. Relaxing and culturally immersive. Perfect after exploring the medina.",
+    "location": {"country": "Morocco", "city": "Marrakech"},
+    "price_range": "$",
+    "rating": 4.6,
+    "categories": ["cultural", "relaxation", "spa", "wellness"],
+    "duration_hours": 2,
+    "best_time": "afternoon"
+  },
+  {
+    "id": "act_005",
+    "type": "activity",
+    "name": "Lake Louise Canoe Rental",
+    "description": "Paddle on the stunning turquoise waters of Lake Louise surrounded by mountains and glaciers. Iconic Canadian Rockies experience with incredible photo opportunities.",
+    "location": {"country": "Canada", "city": "Banff"},
+    "price_range": "$$",
+    "rating": 4.8,
+    "categories": ["nature", "adventure", "photography", "outdoor"],
+    "duration_hours": 2,
+    "best_time": "morning"
+  },
+  {
+    "id": "act_006",
+    "type": "activity",
+    "name": "Arashiyama Bamboo Grove Walk",
+    "description": "Stroll through towering bamboo stalks in this magical forest. Visit nearby temples and the famous Togetsukyo Bridge. Free to enter, best visited early morning.",
+    "location": {"country": "Japan", "city": "Kyoto"},
+    "price_range": "$",
+    "rating": 4.7,
+    "categories": ["nature", "photography", "cultural", "free"],
+    "duration_hours": 1.5,
+    "best_time": "early morning"
+  },
+  {
+    "id": "act_007",
+    "type": "activity",
+    "name": "Wine Tasting Tour",
+    "description": "Visit traditional Santorini wineries and taste unique volcanic wines. Learn about ancient winemaking techniques while enjoying caldera views.",
+    "location": {"country": "Greece", "city": "Santorini"},
+    "price_range": "$$",
+    "rating": 4.6,
+    "categories": ["food", "wine", "cultural", "relaxation"],
+    "duration_hours": 4,
+    "best_time": "afternoon"
+  },
+  {
+    "id": "act_008",
+    "type": "activity",
+    "name": "Blue Lagoon Spa",
+    "description": "Relax in Iceland's famous geothermal spa with milky blue waters rich in minerals. Includes silica mud mask and stunning lava field views. Book in advance.",
+    "location": {"country": "Iceland", "city": "Reykjavik"},
+    "price_range": "$$$",
+    "rating": 4.5,
+    "categories": ["relaxation", "spa", "unique", "luxury"],
+    "duration_hours": 3,
+    "best_time": "afternoon"
+  },
+  {
+    "id": "act_009",
+    "type": "activity",
+    "name": "Jemaa el-Fnaa Evening Experience",
+    "description": "Explore the bustling main square with food stalls, snake charmers, musicians, and storytellers. Authentic Moroccan atmosphere and street food paradise.",
+    "location": {"country": "Morocco", "city": "Marrakech"},
+    "price_range": "$",
+    "rating": 4.7,
+    "categories": ["cultural", "food", "entertainment", "free"],
+    "duration_hours": 2,
+    "best_time": "evening"
+  },
+  {
+    "id": "act_010",
+    "type": "activity",
+    "name": "Banff Gondola Ride",
+    "description": "Ride to the summit of Sulphur Mountain for panoramic views of six mountain ranges. Includes boardwalk, interpretive center, and restaurant at the top.",
+    "location": {"country": "Canada", "city": "Banff"},
+    "price_range": "$$",
+    "rating": 4.6,
+    "categories": ["nature", "photography", "scenic", "family"],
+    "duration_hours": 2,
+    "best_time": "afternoon"
+  }
+]

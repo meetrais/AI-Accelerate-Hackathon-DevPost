@@ -1,0 +1,88 @@
+services:
+  # Elasticsearch (already configured)
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - travel-network
+
+  # Redis for state management and caching
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - travel-network
+    command: redis-server --appendonly yes
+
+  # PostgreSQL for bookings and user data
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: travel_assistant
+      POSTGRES_USER: travel_user
+      POSTGRES_PASSWORD: travel_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - travel-network
+
+  # RabbitMQ for A2A message queue
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: travel_user
+      RABBITMQ_DEFAULT_PASS: travel_pass
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - travel-network
+
+  # Main Flask application (v1.0 - will be orchestrator in v2.0)
+  app:
+    build: .
+    ports:
+      - "5001:8080"
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - REDIS_URL=redis://redis:6379
+      - POSTGRES_URL=postgresql://travel_user:travel_pass@postgres:5432/travel_assistant
+      - RABBITMQ_URL=amqp://travel_user:travel_pass@rabbitmq:5672
+      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+      - GEMINI_MODEL=gemini-2.0-flash-exp
+      - EMBEDDING_MODEL=text-embedding-004
+    volumes:
+      - .:/app
+    depends_on:
+      - elasticsearch
+      - redis
+      - postgres
+      - rabbitmq
+    networks:
+      - travel-network
+
+volumes:
+  es_data:
+  redis_data:
+  postgres_data:
+  rabbitmq_data:
+
+networks:
+  travel-network:
+    driver: bridge
